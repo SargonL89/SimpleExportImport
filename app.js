@@ -7,3 +7,8 @@ const resMultip = operaciones.multiplicar(5, (7*4));
 console.log('El resultado de la suma es:', resSuma);
 console.log('El resultado de la resta es:', resResta);
 console.log('El resultado de la multiplicación es:', resMultip);
+
+const funciones = require('./functions.js');
+
+const busqueda = funciones.buscarUsuario('India', funciones.miCallback);
+console.log('El usuario es:', busqueda)
