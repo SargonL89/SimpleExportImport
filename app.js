@@ -11,4 +11,7 @@ console.log('El resultado de la multiplicación es:', resMultip);
 const funciones = require('./functions.js');
 
 const busqueda = funciones.buscarUsuario('India', funciones.miCallback);
-console.log('El usuario es:', busqueda)
+console.log(busqueda)
+
+const busqueda2 = funciones.buscarUsuario2('Lucrecia', funciones.printInConsole);
+console.log(busqueda2);

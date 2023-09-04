@@ -12,19 +12,47 @@ function buscarUsuario(ubicacion, callback) {
         callback(resultado, error);
     })
     .catch(error => {
-        callback('Error en la solicitud: ', error);
+        callback('F1. Error en la solicitud: ', error);
     });
 };
 
 function miCallback(resultado, error) {
     if (resultado) {
-        console.log("El resultado es:", resultado)
+        console.log("F1. Resultado de buscar por ubicación:", resultado)
     } else {
-        console.log("Error en la búsqueda:", error)
+        console.log("F1. Error en la búsqueda:", error)
     }
 };
 
+
+function buscarUsuario2(nombre, callback) {
+    setTimeout(() => {
+        const usuarios = [
+            {id: 1, nombre: 'Fernandito'},
+            {id: 2, nombre: 'Lucrecia'},
+            {id: 3, nombre: 'Antonio'}
+        ];
+        const usuarioEncontrado = usuarios.find(usuario => usuario.nombre === nombre);
+        if (usuarioEncontrado) {
+            callback(null, usuarioEncontrado)
+        } else {
+            callback('Usuario no encontrado')
+        }
+    }, 1500);
+};
+
+function printInConsole(error, usuario) {
+    if (error) {
+        console.error('F2. Error en la búsqueda:', error)
+    } else {
+        console.log('F2. El resultado de la 2da función callback es:', usuario)
+    };
+};
+
+
 module.exports = {
     buscarUsuario,
-    miCallback
+    miCallback,
+    buscarUsuario2,
+    printInConsole
 };
