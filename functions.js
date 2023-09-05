@@ -50,9 +50,28 @@ function printInConsole(error, usuario) {
 };
 
 
+function buscarUsuario3(usuario) {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            const usuarios = [
+                {id: 1, nombre: 'Fernandito'},
+                {id: 2, nombre: 'Lucrecia'},
+                {id: 3, nombre: 'Antonio'}
+            ];
+            const usuarioEncontrado = usuarios.find(name => name.nombre === usuario);
+        if (usuarioEncontrado) {
+            resolve(usuarioEncontrado);
+        } else {
+            reject('No se ha encontrado el usuario')
+        }}, 1000)
+    });
+};
+
+
 module.exports = {
     buscarUsuario,
     miCallback,
     buscarUsuario2,
-    printInConsole
+    printInConsole,
+    buscarUsuario3
 };
